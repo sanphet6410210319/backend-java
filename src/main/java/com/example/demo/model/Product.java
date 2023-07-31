@@ -1,17 +1,42 @@
 package com.example.demo.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "product")
 public class Product {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
 	private Integer productId;
-	private String ProductName;
-	private Integer productPrice;
+	private String productName;
+	private Double productPrice;
 	private Integer productAmount;
-	private String productDetail;
+	private String productDetail; {
+		
+	}
 	
-	public Product(Integer productId, String ProductName, Integer productPrice, Integer productAmount ,String productDetail) {
+	
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Product() {
 		super();
-		this.productId = productId;
-		this.ProductName = ProductName;
+	}
+
+	public Product(String productName, Double productPrice, Integer productAmount,String productDetail) {
+		super();
+		this.productName = productName;
 		this.productPrice = productPrice;
 		this.productAmount = productAmount;
 		this.productDetail = productDetail;
@@ -26,18 +51,18 @@ public class Product {
 	}
 
 	public String getProductName() {
-		return ProductName;
+		return productName;
 	}
 
 	public void setProductName(String productName) {
-		ProductName = productName;
+		this.productName = productName;
 	}
 
-	public Integer getProductPrice() {
+	public Double getProductPrice() {
 		return productPrice;
 	}
 
-	public void setProductPrice(Integer productPrice) {
+	public void setProductPrice(Double productPrice) {
 		this.productPrice = productPrice;
 	}
 
@@ -56,5 +81,6 @@ public class Product {
 	public void setProductDetail(String productDetail) {
 		this.productDetail = productDetail;
 	}
-	
+
+
 }
