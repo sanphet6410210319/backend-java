@@ -10,6 +10,6 @@ public class BackendJavaApplication {
 		
 		SpringApplication.run(BackendJavaApplication.class, args);
 		System.out.println("Hello");
+		System.out.println("Sanphet");
 	}
-
 }
