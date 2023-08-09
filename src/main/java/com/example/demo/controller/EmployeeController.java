@@ -50,7 +50,7 @@ public class EmployeeController {
 		}
 		}catch (Exception e) 
 		{
-		return new ResponseEntity<>("Error", HttpStatus.INTERNAL_SERVER_ERROR);
+		return new ResponseEntity<>("INTERNAL server error", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	
 	}
