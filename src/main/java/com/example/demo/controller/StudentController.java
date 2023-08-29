@@ -38,9 +38,9 @@ public class StudentController {
 	@PostMapping("/student")
 	public ResponseEntity<Object> addStudent(@RequestBody Student body){
 		try {
-			
+			System.out.print("ปปปปป");
 			Student student = studentRepository.save(body);
-		
+			System.out.print("ปปปป1");
 			return new ResponseEntity<>(student, HttpStatus.CREATED);
 			
 		}catch (Exception e) {
