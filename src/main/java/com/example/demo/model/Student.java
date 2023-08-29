@@ -16,6 +16,23 @@ public class Student {
 	
     @Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+    private String std;
+	public String getStd() {
+		return std;
+	}
+	public Student(String std, String studentId, String name, String email) {
+		super();
+		this.std = std;
+		this.studentId = studentId;
+		this.name = name;
+		this.email = email;
+	}
+	public Student() {
+		super();
+	}
+	public void setStd(String std) {
+		this.std = std;
+	}
 	private String studentId;
 	private String name;
 	private String email;

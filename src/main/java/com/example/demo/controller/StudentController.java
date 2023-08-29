@@ -50,9 +50,9 @@ public class StudentController {
 		
 	}
 	@PutMapping("/student/{studentId}")
-	public ResponseEntity<Object> updateStudent(@PathVariable String studentId, @RequestBody Student body) {
+	public ResponseEntity<Object> updateStudent(@PathVariable Integer std, @RequestBody Student body) {
 	    try {
-	        Optional<Student> student = studentRepository.findById(studentId);
+	        Optional<Student> student = studentRepository.findById(std);
 	        if (student.isPresent()) {
 	            student.get().setName(body.getName());
 	            student.get().setEmail(body.getEmail());
@@ -69,12 +69,12 @@ public class StudentController {
 
 	
 	@DeleteMapping("/student/{studentId}")
-	public ResponseEntity<Object> deleteStudent(@PathVariable String studentId) {
+	public ResponseEntity<Object> deleteStudent(@PathVariable Integer std) {
 	    try {
-	        Optional<Student> student = studentRepository.findById(studentId);
+	        Optional<Student> student = studentRepository.findById(std);
 	        if (student.isPresent()) {
 	            studentRepository.delete(student.get());
-	            return new ResponseEntity<>("Delete successful",HttpStatus.OK);
+	            return new ResponseEntity<>("",HttpStatus.OK);
 	        } else {
 	            return new ResponseEntity<>("Failed!", HttpStatus.BAD_REQUEST);
 	        }
